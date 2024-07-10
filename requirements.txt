@@ -1,6 +1,4 @@
 fastapi[all]
 transformers
-tf_keras
-torch
-tensorflow
+tf-keras
 watchfiles

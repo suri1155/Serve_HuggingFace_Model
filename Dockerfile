@@ -19,6 +19,10 @@ FROM python:3.12-slim
 # Set working directory for clarity
 WORKDIR /app
 
+# Copy the installed dependencies from the builder stage
+COPY --from=builder /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
+COPY --from=builder /usr/local/bin /usr/local/bin
+
 # Copy the compiled application code from the builder stage
 COPY --from=builder /app /app
 
